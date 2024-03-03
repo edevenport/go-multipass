@@ -15,6 +15,7 @@ type InstanceAttributes struct {
     Disk   string
     Name   string
     Memory string
+    IPv4   string
 }
 
 func GetCmd(name string, attribute string) (string, error) {
@@ -51,6 +52,7 @@ func Get(getReq *GetReq) (*InstanceAttributes, error) {
     instance.CPUS = attrs_result["cpus"]
     instance.Memory = attrs_result["memory"]
     instance.Disk = attrs_result["disk"]
+    instance.IPv4 = attrs_result["ipv4"]
 
     return &instance, nil
 }
